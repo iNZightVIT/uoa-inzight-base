@@ -38,6 +38,9 @@ RUN wget --no-verbose -O shiny-server.deb ${SHINY_VERSION} \
 # install R packages
 RUN R -e "install.packages(c('rmarkdown', 'devtools', 'shiny', 'DT'), repos='http://cran.rstudio.com/', lib='/usr/lib/R/site-library', dependencies=T)" \
     && R -e "devtools::install_github('ramnathv/rCharts')"
+    
+# Clean up APT when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # expose ports
 EXPOSE 3838
