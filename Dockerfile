@@ -13,7 +13,7 @@ FROM debian:jessie
 
 MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 
-ENV BUILD_DATE "2016-12-14"
+ENV BUILD_DATE "2016-12-15"
 
 # Add the CRAN PPA to get all versions of R and install base R and required packages
 # install shiny server and clean up all downloaded files to make sure the image remains lean as much as possible
